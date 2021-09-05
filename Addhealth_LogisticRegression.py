@@ -6,7 +6,7 @@ Created on Sat Aug  7 19:06:33 2021
 """
 
 import pandas as pd
-df = pd.read_csv('addhealth.csv')
+df = pd.read_csv('Assets/addhealth.csv')
 
 for i in df:
     df[i] = df[i].fillna(df[i].mode()[0])

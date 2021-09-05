@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup as BS
 
 url = "https://www.sbipensionfunds.com/historical-nav/"
 
-browser = webdriver.Chrome(executable_path = ".//chromedriver")
+browser = webdriver.Chrome(executable_path = "Assets/chromedriver")
 
 browser.get(url)
 

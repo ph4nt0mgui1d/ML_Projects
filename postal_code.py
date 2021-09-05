@@ -1,6 +1,6 @@
 import re
 
-largest_cities_file = open("largest_cities_germany.txt", 'r')
+largest_cities_file = open("Assets/largest_cities_germany.txt", 'r')
 largest_cities_data = largest_cities_file.readlines()
 
 regex_cities = re.compile(r'\s[\w\s]+\s+')   #have to figure out the regex

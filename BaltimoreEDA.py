@@ -1,7 +1,7 @@
 
 import pandas as pd
 import numpy as np
-df = pd.read_csv('Baltimore.csv')
+df = pd.read_csv('Assets/Baltimore.csv')
 
 df.sample(5)
 

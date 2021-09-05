@@ -6,7 +6,7 @@ Created on Sat Aug  7 14:19:14 2021
 """
 
 import pandas as pd
-df = pd.read_csv('movie.csv')
+df = pd.read_csv('Assets/movie.csv')
 
 import re
 import nltk

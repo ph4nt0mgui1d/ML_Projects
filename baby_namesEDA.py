@@ -11,7 +11,7 @@ import re
 
 
 
-files = glob('baby_names/*.txt')
+files = glob('Assets/baby_names/*.txt')
 
 temp_list = []
 for file in files:

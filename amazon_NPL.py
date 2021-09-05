@@ -6,7 +6,7 @@ Created on Wed Aug  4 12:42:51 2021
 """
 
 import pandas as pd
-data = pd.read_table('amazon_cells_labelled.txt', names = ["Review", "Liked"])
+data = pd.read_table('Assets/amazon_cells_labelled.txt', names = ["Review", "Liked"])
 
 import nltk
 from nltk.corpus import stopwords

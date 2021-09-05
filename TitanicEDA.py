@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('titanic.csv')
+df = pd.read_csv('Assets/titanic.csv')
 
 df.sample()
 

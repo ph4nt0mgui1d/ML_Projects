@@ -1,6 +1,6 @@
 import re
 
-fh = open("simpsons_phone_book.txt", 'r')
+fh = open("Assets/simpsons_phone_book.txt", 'r')
 
 for line in fh:
 	if(re.search(r'^J\w*\s*(Neu)', line)):

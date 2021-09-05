@@ -7,7 +7,7 @@ Created on Thu Jul 29 17:37:34 2021
 
 import pandas as pd
 
-dataset = pd.read_csv('IQ_Size.csv')
+dataset = pd.read_csv('Assets/IQ_Size.csv')
 
 dataset.isnull().any(axis = 0)
 

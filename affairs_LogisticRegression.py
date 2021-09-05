@@ -7,7 +7,7 @@ Created on Tue Aug  3 19:47:36 2021
 
 import pandas as pd
 import numpy as np
-df = pd.read_csv('affairs.csv')
+df = pd.read_csv('Assets/affairs.csv')
 
 df.isnull().any(axis = 0)
 

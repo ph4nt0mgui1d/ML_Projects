@@ -7,7 +7,7 @@ Created on Wed Jul 28 17:52:03 2021
 
 import pandas as pd
 
-df = pd.read_csv('Salary_Classification.csv')
+df = pd.read_csv('Assets/Salary_Classification.csv')
 
 df.isnull().any(axis = 0)
 

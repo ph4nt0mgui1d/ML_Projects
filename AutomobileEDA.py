@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('Automobile.csv')
+df = pd.read_csv('Assets/Automobile.csv')
 
 df['price'].mean()      #to calculate mean
 

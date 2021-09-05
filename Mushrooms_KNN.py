@@ -6,7 +6,7 @@ Created on Sat Jul 31 10:32:54 2021
 """
 
 import pandas as pd
-df = pd.read_csv('mushrooms.csv')
+df = pd.read_csv('Assets/mushrooms.csv')
 
 labels = df.iloc[:, [0]].values
 features = df.iloc[:, [5,-2,-1]].values

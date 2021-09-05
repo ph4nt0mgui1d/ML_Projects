@@ -9,7 +9,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('Foodtruck.csv')
+df = pd.read_csv('Assets/Foodtruck.csv')
 regressor = LinearRegression()
 
 features = df['Population'].values

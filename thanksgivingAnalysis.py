@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 import re
 
-thanksgiving_df = pd.read_csv('thanksgiving.csv', encoding = 'Windows 1252')
+thanksgiving_df = pd.read_csv('Assets/thanksgiving.csv', encoding = 'Windows 1252')
 
 columns_names = thanksgiving_df.columns.tolist()
 

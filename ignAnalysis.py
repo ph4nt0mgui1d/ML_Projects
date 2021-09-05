@@ -7,7 +7,7 @@ Created on Tue Jul 20 22:56:47 2021
 
 import pandas as pd
 
-df = pd.read_csv('ign.csv')
+df = pd.read_csv('Assets/ign.csv')
 
 
 xbox_one_filter = (df["score"] > 7) & (df["platform"] == "Xbox One")

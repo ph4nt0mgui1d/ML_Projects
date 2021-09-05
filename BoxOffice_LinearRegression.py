@@ -8,7 +8,7 @@ Created on Sat Jul 24 14:27:30 2021
 from sklearn.linear_model import LinearRegression
 import pandas as pd
 
-df = pd.read_csv('Box_Office.csv')
+df = pd.read_csv('Assets/Box_Office.csv')
 
 regressorB = LinearRegression()
 regressorD = LinearRegression()

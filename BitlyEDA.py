@@ -9,7 +9,7 @@ Created on Mon Jul 19 17:56:31 2021
 import pandas as pd
 import numpy as np
 
-json_df = pd.read_json('bitly.json', lines = True)
+json_df = pd.read_json('Assets/bitly.json', lines = True)
 
 json_df.isnull().any(axis = 0)
 

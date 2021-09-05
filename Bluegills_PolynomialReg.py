@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv('bluegills.csv')
+dataset = pd.read_csv('Assets/bluegills.csv')
 features = dataset.iloc[:, 0:1].values
 labels = dataset.iloc[:, 1].values
 
