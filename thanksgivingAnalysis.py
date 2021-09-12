@@ -9,39 +9,38 @@ import pandas as pd
 import numpy as np
 import re
 
-thanksgiving_df = pd.read_csv('Assets/thanksgiving.csv', encoding = 'Windows 1252')
+df = pd.read_csv('Assets/thanksgiving.csv', encoding = 'Windows 1252')
 
-columns_names = thanksgiving_df.columns.tolist()
+columns_names = df.columns.tolist()
 
 columns_code = [x for x in range(0,65)]
 
 columns_names_code_mapping = dict(zip(columns_code, columns_names))
 
-thanksgiving_df.columns = columns_code
+df.columns = columns_code
 
-thanksgiving_df = thanksgiving_df[thanksgiving_df[1] == "Yes"]
+df = df[df[1] == "Yes"]
 
-thanksgiving_df.isnull().any(axis = 0)
-
-thanksgiving_df = thanksgiving_df.replace(np.nan, 'Missing')
-
-region_based = thanksgiving_df.groupby(64)
-print (region_based.groups)
-print (region_based.size())
-
-income_based = thanksgiving_df.groupby(63)
-print (income_based.groups)
-print (income_based.size())
+df.isnull().any(axis = 0)
+df = df.replace(np.nan, 'Missing')
 
 
-area_type_based = thanksgiving_df.groupby(60)
-print (area_type_based.groups)
-print (area_type_based.size())
+region_based = df.groupby(64)
+region_based.groups
+region_based.size()
+
+income_based = df.groupby(63)
+income_based.groups
+income_based.size()
+
+area_type_based = df.groupby(60)
+area_type_based.groups
+area_type_based.size()
 
 
-sauce_type_per_income_group = thanksgiving_df.groupby(8)[63].value_counts()
+sauce_type_per_income_group = df.groupby(8)[63].value_counts()
+sauce_type_per_income_group
 
-print (sauce_type_per_income_group)
 
 def gender_filter(value):
     if value == "Male":
@@ -51,11 +50,11 @@ def gender_filter(value):
 
     return value
 
-thanksgiving_df[62] = thanksgiving_df[62].apply(gender_filter)
-print (thanksgiving_df[62].value_counts(dropna = False))
+df[62] = df[62].apply(gender_filter)
+df[62].value_counts()
 
 
-thanksgiving_df[63] = thanksgiving_df[63].replace(['Prefer not to answer', 'Missing'],['0','0'])
+df[63] = df[63].replace(['Prefer not to answer', 'Missing'],['0','0'])
 
 regex = re.compile("\d+\W*\d+")
 
@@ -65,18 +64,12 @@ def income_filter(value):
     return sum(value)/(len(value)+0.1)
 
 
-thanksgiving_df[63] = thanksgiving_df[63].apply(income_filter)
+df[63] = df[63].apply(income_filter)
 
 
- 
-income_by_sauce_type = thanksgiving_df.groupby(8)[63]
-
-print (income_by_sauce_type.groups)
+income_by_sauce_type = df.groupby(8)[63]
+income_by_sauce_type.groups
 
 avg_income_by_sauce_type = income_by_sauce_type.mean()
-
-print (avg_income_by_sauce_type)
-
-
-
+avg_income_by_sauce_type
 avg_income_by_sauce_type.plot.bar()

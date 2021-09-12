@@ -5,22 +5,21 @@ Created on Sat Jul 24 14:27:30 2021
 @author: Aryan Sharma
 """
 
-from sklearn.linear_model import LinearRegression
 import pandas as pd
 
 df = pd.read_csv('Assets/Box_Office.csv')
 
+features = df['Days'].values
+lablesB = df['Bahu_collections'].values
+labelsD = df['Dangal_collections'].values
+
+features = features.reshape(9,1)
+
+from sklearn.linear_model import LinearRegression
 regressorB = LinearRegression()
 regressorD = LinearRegression()
-
-days = df['Days'].values
-Bcollection = df['Bahu_collections'].values
-Dcollection = df['Dangal_collections'].values
-
-days = days.reshape(9,1)
-
-regressorB.fit(days, Bcollection)
-regressorD.fit(days, Dcollection)
+regressorB.fit(features, labelsB)
+regressorD.fit(features, labelsD)
 
 colB = regressorB.predict([[10]])
 colD = regressorD.predict([[10]])
