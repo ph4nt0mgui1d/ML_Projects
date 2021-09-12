@@ -12,12 +12,11 @@ df = pd.read_csv('Assets/ign.csv')
 
 filtered_reviews = df[(df["score"] > 7) & (df["platform"] == "Xbox One")]
 games_list_xbox = filtered_reviews['title']
-print (games_list_xbox_one)
+print (games_list_xbox)
 
 
-xbox = df['platform']=="Xbox One"
-xbox_only_df = df[xbox_one]
-xbox_reviews = xbox_one_only_df['score_phrase']
+xbox_df = df[df['platform'] == 'Xbox One']
+xbox_reviews = xbox_df['score_phrase']
 xbox_reviews.hist(bins=20, grid = False, xrot=90)
 
 
