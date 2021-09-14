@@ -9,6 +9,7 @@ import pandas as pd
 data = pd.read_table('Assets/amazon_cells_labelled.txt', names = ["Review", "Liked"])
 
 import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import re
@@ -28,9 +29,6 @@ for i in range(0, 1000):
     
     corpus.append(review)
 
-print(corpus)
-print(len(corpus))
-
 
 from sklearn.feature_extraction.text import CountVectorizer
 cv = CountVectorizer(max_features =1500)
@@ -39,8 +37,6 @@ cv = CountVectorizer(max_features =1500)
 features = cv.fit_transform(corpus).toarray() # 1500 columns
 labels = data.iloc[:, 1].values
 
-print(features.shape)
-print(labels.shape)
 
 from sklearn.model_selection import train_test_split
 features_train, features_test, labels_train, labels_test = \
@@ -65,7 +61,6 @@ print(cm_knn)
 print( (cm_knn[0][0] + cm_knn[1][1]) / (cm_knn[0][0] + cm_knn[1][1] + cm_knn[0][1] + cm_knn[1][0]))
 
 # for better NLP results we need lot of data
-
 
 # or
 
