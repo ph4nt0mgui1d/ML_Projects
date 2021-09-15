@@ -39,8 +39,7 @@ labels = data.iloc[:, 1].values
 
 
 from sklearn.model_selection import train_test_split
-features_train, features_test, labels_train, labels_test = \
-train_test_split(features, labels, test_size = 0.20, random_state = 0)
+features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size = 0.20, random_state = 0)
 
 
 
@@ -59,24 +58,4 @@ cm_knn = confusion_matrix(labels_test, labels_pred)
 print(cm_knn) 
 
 print( (cm_knn[0][0] + cm_knn[1][1]) / (cm_knn[0][0] + cm_knn[1][1] + cm_knn[0][1] + cm_knn[1][0]))
-
-# for better NLP results we need lot of data
-
-# or
-
-# Fitting Naive Bayes to the Training set
-from sklearn.naive_bayes import GaussianNB
-classifier = GaussianNB()
-classifier.fit(features_train, labels_train)
-
-# Predicting the Test set results
-labels_pred = classifier.predict(features_test)
-
-# Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix
-
-cm_nb = confusion_matrix(labels_test, labels_pred)
-print(cm_nb)
-
-print( (cm_nb[0][0] + cm_nb[1][1]) / (cm_nb[0][0] + cm_nb[1][1] + cm_nb[0][1] + cm_nb[1][0]))
 

@@ -40,9 +40,7 @@ labels_expel = df["EXPEL1"].values
     
 # Splitting the dataset into train and test
 from sklearn.model_selection import train_test_split as TTS
-
-f_train,f_test,l_train,l_test = TTS(features_expel, labels_expel, test_size = 0.25,
-                                    random_state = 0)
+f_train,f_test,l_train,l_test = TTS(features_expel, labels_expel, test_size = 0.25, random_state = 0)
 
 # Logistic Regression Model
 from sklearn.linear_model import LogisticRegression
